@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Report</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      line-height: 1.65;
+      margin: 40px auto;
+      max-width: 900px;
+      color: #111;
+      padding: 0 24px;
+    }
+    h1, h2, h3 { color: #143d59; }
+    p { text-align: justify; }
+    code, pre {
+      font-family: Consolas, monospace;
+      background: #f5f5f5;
+      border-radius: 6px;
+    }
+    code { padding: 2px 5px; }
+    pre { padding: 12px; overflow-x: auto; }
+    ul, ol { margin-left: 24px; }
+  </style>
+</head>
+<body>
+  <h1>Project Report</h1>
+  <h2>Title</h2>
+  <p><b>Low-Cost 3D Surface Reconstruction Using Photometric Stereo</b></p>
+
+  <h2>Abstract</h2>
+  <p>
+    This project presents a lightweight computer vision system for reconstructing the surface
+    characteristics of a small object using four images captured under different lighting directions.
+    The method is based on photometric stereo, which estimates surface normals and albedo from
+    illumination changes while keeping the camera viewpoint fixed. The estimated normals are then
+    integrated to obtain an approximate depth map. The project uses only classical image processing
+    and linear algebra, making it suitable for low-resource academic environments. It avoids deep
+    learning, large datasets, and GPU dependency while still producing visually meaningful outputs
+    such as object mask, albedo image, normal map, depth map, and relit preview.
+  </p>
+
+  <h2>1. Introduction</h2>
+  <p>
+    Computer vision aims to extract meaningful information from images. While many student projects
+    focus on recognition and detection, another important area is shape recovery from physical image
+    cues. Photometric stereo is a classical technique that estimates the orientation of a surface by
+    observing it under varying illumination. This project applies that idea in a simple and low-cost
+    manner using only a mobile phone camera and controlled lighting.
+  </p>
+
+  <h2>2. Problem Statement</h2>
+  <p>
+    Most common student computer vision projects are repetitive and may depend on pretrained models
+    or larger hardware resources. The goal of this work is to build a more unique, syllabus-driven,
+    and computationally efficient project that demonstrates real understanding of computer vision
+    principles.
+  </p>
+
+  <h2>3. Objectives</h2>
+  <ul>
+    <li>Build a low-resource project from the course syllabus.</li>
+    <li>Estimate albedo and surface normals from multiple light directions.</li>
+    <li>Recover an approximate depth map from the normal field.</li>
+    <li>Generate clear and interpretable outputs for demonstration.</li>
+  </ul>
+
+  <h2>4. Syllabus Mapping</h2>
+  <ul>
+    <li>Module 1: image formation, filtering, intensity normalization</li>
+    <li>Module 3: segmentation and object extraction</li>
+    <li>Module 5: albedo estimation, photometric stereo, Shape From X</li>
+  </ul>
+
+  <h2>5. Methodology</h2>
+  <ol>
+    <li>Capture four aligned images of the object under left, right, top, and bottom lighting.</li>
+    <li>Convert the images to grayscale and apply Gaussian denoising.</li>
+    <li>Normalize image intensity values.</li>
+    <li>Generate an object mask using thresholding and morphology.</li>
+    <li>Solve the photometric stereo equation <code>I = Lg</code> using known light directions.</li>
+    <li>Compute albedo and surface normals.</li>
+    <li>Integrate the normal field using an FFT-based method to estimate depth.</li>
+    <li>Save all outputs for visualization and analysis.</li>
+  </ol>
+
+  <h2>6. Software and Hardware Requirements</h2>
+  <ul>
+    <li>Python 3.10 or above</li>
+    <li>NumPy</li>
+    <li>OpenCV</li>
+    <li>Mobile phone camera</li>
+    <li>Basic directional light source such as a phone flashlight</li>
+  </ul>
+
+  <h2>7. Expected Results</h2>
+  <p>The system produces the following outputs:</p>
+  <ul>
+    <li>binary object mask</li>
+    <li>albedo image</li>
+    <li>surface normal map</li>
+    <li>approximate depth map</li>
+    <li>relit preview image</li>
+  </ul>
+
+  <h2>8. Advantages</h2>
+  <ul>
+    <li>low resource usage</li>
+    <li>no deep learning required</li>
+    <li>strong syllabus relevance</li>
+    <li>more unique than common classroom projects</li>
+    <li>easy to explain mathematically</li>
+  </ul>
+
+  <h2>9. Limitations</h2>
+  <ul>
+    <li>best suited for matte objects</li>
+    <li>requires fixed camera and object position</li>
+    <li>depth is approximate rather than exact</li>
+    <li>sensitive to harsh shadows and reflective surfaces</li>
+  </ul>
+
+  <h2>10. Conclusion</h2>
+  <p>
+    The project demonstrates that meaningful surface reconstruction can be achieved using classical
+    computer vision with very limited resources. It combines theoretical relevance, uniqueness,
+    simplicity of implementation, and good presentation value, making it a strong academic project
+    for a Computer Vision course.
+  </p>
+
+  <h2>11. References</h2>
+  <ol>
+    <li>Richard Szeliski, <i>Computer Vision: Algorithms and Applications</i>, Springer, 2011.</li>
+    <li>D. A. Forsyth and J. Ponce, <i>Computer Vision: A Modern Approach</i>, Pearson Education, 2003.</li>
+    <li>Richard Hartley and Andrew Zisserman, <i>Multiple View Geometry in Computer Vision</i>, Cambridge University Press, 2004.</li>
+    <li>Rafael C. Gonzalez and Richard E. Woods, <i>Digital Image Processing</i>, Addison-Wesley, 1992.</li>
+  </ol>
+</body>
+</html>
