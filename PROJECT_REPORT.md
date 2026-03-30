@@ -161,11 +161,11 @@ No GPU or high-end hardware is required.
 
 ## 10. Implementation Details
 
-The implementation is contained in [run_photometric_stereo.py](C:\Users\chour\Downloads\CV Project\pocket_photometric_stereo\run_photometric_stereo.py). The program:
+The implementation is contained in [run_photometric_stereo.py](pocket_photometric_stereo/run_photometric_stereo.py). The program:
 
 - automatically locates `left`, `right`, `top`, and `bottom` images
 - supports optional resizing for faster execution
-- allows custom light directions using [lights_example.json](C:\Users\chour\Downloads\CV Project\pocket_photometric_stereo\lights_example.json)
+- allows custom light directions using [lights_example.json](pocket_photometric_stereo/lights_example.json)
 - saves all outputs into the `output` folder
 
 The design intentionally uses only standard scientific Python tools to keep installation simple.
